@@ -1,5 +1,6 @@
 package com.sunstar.lsvideopic
 
+import android.content.Context
 import androidx.annotation.NonNull;
 import io.flutter.embedding.engine.plugins.FlutterPlugin
 import io.flutter.plugin.common.MethodCall
@@ -9,35 +10,34 @@ import io.flutter.plugin.common.MethodChannel.Result
 import io.flutter.plugin.common.PluginRegistry.Registrar
 
 /** LsvideopicPlugin */
-public class LsvideopicPlugin: FlutterPlugin, MethodCallHandler {
-  override fun onAttachedToEngine(@NonNull flutterPluginBinding: FlutterPlugin.FlutterPluginBinding) {
-    val channel = MethodChannel(flutterPluginBinding.getFlutterEngine().getDartExecutor(), "lsvideopic")
-    channel.setMethodCallHandler(LsvideopicPlugin());
-  }
-
-  // This static function is optional and equivalent to onAttachedToEngine. It supports the old
-  // pre-Flutter-1.12 Android projects. You are encouraged to continue supporting
-  // plugin registration via this function while apps migrate to use the new Android APIs
-  // post-flutter-1.12 via https://flutter.dev/go/android-project-migration.
-  //
-  // It is encouraged to share logic between onAttachedToEngine and registerWith to keep
-  // them functionally equivalent. Only one of onAttachedToEngine or registerWith will be called
-  // depending on the user's project. onAttachedToEngine or registerWith must both be defined
-  // in the same class.
-  companion object {
-    @JvmStatic
-    fun registerWith(registrar: Registrar) {
-      val channel = MethodChannel(registrar.messenger(), "lsvideopic")
-      channel.setMethodCallHandler(LsvideopicPlugin())
+public class LsvideopicPlugin : FlutterPlugin, MethodCallHandler {
+    var context: Context? = null
+    override fun onAttachedToEngine(@NonNull flutterPluginBinding: FlutterPlugin.FlutterPluginBinding) {
+        staticContext = flutterPluginBinding.applicationContext;
+        val channel = MethodChannel(flutterPluginBinding.getFlutterEngine().getDartExecutor(), "lsvideopic")
+        channel.setMethodCallHandler(LsvideopicPlugin());
     }
-  }
 
-  override fun onMethodCall(@NonNull call: MethodCall, @NonNull result: Result) {
-    when(call.method){
-      
+    companion object {
+        var staticContext: Context? = null
+        @JvmStatic
+        fun registerWith(registrar: Registrar) {
+            val channel = MethodChannel(registrar.messenger(), "lsvideopic")
+            staticContext = registrar.context()
+            channel.setMethodCallHandler(LsvideopicPlugin())
+        }
     }
-  }
 
-  override fun onDetachedFromEngine(@NonNull binding: FlutterPlugin.FlutterPluginBinding) {
-  }
+    override fun onMethodCall(@NonNull call: MethodCall, @NonNull result: Result) {
+        when (call.method) {
+            "getThumbPic" -> {
+                staticContext?.run {
+                    VideoUtil.getFrameImg(this, call.argument<String>("videoPath")!!, call.argument<Long>("second")!!, result)
+                }
+            }
+        }
+    }
+
+    override fun onDetachedFromEngine(@NonNull binding: FlutterPlugin.FlutterPluginBinding) {
+    }
 }
