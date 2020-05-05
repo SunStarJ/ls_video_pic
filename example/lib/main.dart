@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:lsvideopic/ls_video_pic.dart';
 
@@ -67,6 +68,10 @@ class _MyAppState extends State<MyApp> {
                           setState(() {
                             pathList.add(data);
                           });
+                        }).catchError((error){
+
+                          (error as PlatformException).details;
+                          print(error);
                         });
                       },
                       child: Text("裁吧老弟"))

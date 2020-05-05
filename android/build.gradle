@@ -42,4 +42,5 @@ android {
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'com.github.microshow:RxFFmpeg:3.1.0'
+    implementation 'top.zibin:Luban:1.1.8'
 }
