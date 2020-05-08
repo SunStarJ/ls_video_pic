@@ -10,7 +10,7 @@ import 'package:lsvideopic/ls_video_pic.dart';
 **2.使用**<br>
 ```
  ///@param videoPath 视频路径
- ///@param milliseconds 毫秒值
+ ///@param milliseconds 帧秒值
  LsVideoPic.videoFrameImagePath(videoPath, timeStemp)
            .then((data) {
                 //图片路径
