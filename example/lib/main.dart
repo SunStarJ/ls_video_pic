@@ -17,13 +17,13 @@ class _MyAppState extends State<MyApp> {
   TextEditingController _control = TextEditingController();
   String videoPath = "";
   List<String> pathList = List();
-  num timeStemp = 0;
+  num milliseconds = 0;
 
   @override
   void initState() {
     super.initState();
     _control.addListener(() {
-      timeStemp = num.parse(_control.text) * 1000;
+      milliseconds = num.parse(_control.text) * 1000;
     });
   }
 
@@ -63,7 +63,7 @@ class _MyAppState extends State<MyApp> {
                   )),
                   FlatButton(
                       onPressed: () async {
-                        LsVideoPic.videoFrameImagePath(videoPath, timeStemp)
+                        LsVideoPic.videoFrameImagePath(videoPath, milliseconds)
                             .then((data) {
                           setState(() {
                             pathList.add(data);
