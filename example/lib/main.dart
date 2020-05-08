@@ -4,7 +4,7 @@ import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
-import 'package:lsvideopic/ls_video_pic.dart';
+import 'package:lsvideopic/lsvideopic.dart';
 
 void main() => runApp(MyApp());
 
