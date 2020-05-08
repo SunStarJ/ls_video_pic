@@ -3,11 +3,18 @@
 Flutter 视频裁图功能
 
 ## 如何试用
-**1.导入**<br>
+
+**1.安装**<br>
+```
+ls_video_pic:<br>
+    git: https://github.com/SunStarJ/ls_video_pic.git<br>
+  ```
+
+**2.导入**<br>
 `
 import 'package:lsvideopic/ls_video_pic.dart';
 `<br>
-**2.使用**<br>
+**3.使用**<br>
 ```
  ///@param videoPath 视频路径
  ///@param milliseconds 帧秒值
