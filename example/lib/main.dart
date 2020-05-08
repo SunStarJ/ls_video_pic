@@ -65,6 +65,9 @@ class _MyAppState extends State<MyApp> {
                       onPressed: () async {
                         LsVideoPic.videoFrameImagePath(videoPath, milliseconds)
                             .then((data) {
+
+                          print(data);    
+
                           setState(() {
                             pathList.add(data);
                           });
