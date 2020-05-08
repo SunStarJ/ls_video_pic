@@ -1,8 +1,7 @@
 name: lsvideopic
 description: A new Flutter plugin.
 version: 0.0.1
-author:
-homepage:
+homepage: https://github.com/SunStarJ/ls_video_pic
 
 environment:
   sdk: ">=2.1.0 <3.0.0"
