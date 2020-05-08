@@ -11,8 +11,9 @@ import Flutter
 
 class VideoCropImgSupport {
 
-    var channelResult: FlutterResult!
+    var description: String
     
+    var channelResult: FlutterResult!
     
     init(mController:FlutterViewController) {
         

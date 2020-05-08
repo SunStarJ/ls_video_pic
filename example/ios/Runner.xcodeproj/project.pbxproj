@@ -17,9 +17,6 @@
 		97C147011CF9000F007C117D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FF1CF9000F007C117D /* LaunchScreen.storyboard */; };
 		D16076162462C94400581DF9 /* App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B80C3931E831B6300D905FE /* App.framework */; };
 		D16076172462C94400581DF9 /* App.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3B80C3931E831B6300D905FE /* App.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		D1E4D88A246524630087C68E /* VideoCropImgSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E4D889246524630087C68E /* VideoCropImgSupport.swift */; };
-		D1E4D88D246525EB0087C68E /* LMTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E4D88C246525EB0087C68E /* LMTools.swift */; };
-		D1E4D88F2465429E0087C68E /* ClearCacheTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E4D88E2465429E0087C68E /* ClearCacheTool.swift */; };
 		F9043C21AF3F839D09868E79 /* Pods_Runner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E18DD2571594BDBCB50B3E58 /* Pods_Runner.framework */; };
 /* End PBXBuildFile section */
 
@@ -56,9 +53,6 @@
 		97C147001CF9000F007C117D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		97C147021CF9000F007C117D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AEC67D9567F0FB85A3D03121 /* Pods-Runner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Runner.debug.xcconfig"; path = "Target Support Files/Pods-Runner/Pods-Runner.debug.xcconfig"; sourceTree = "<group>"; };
-		D1E4D889246524630087C68E /* VideoCropImgSupport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCropImgSupport.swift; sourceTree = "<group>"; };
-		D1E4D88C246525EB0087C68E /* LMTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LMTools.swift; sourceTree = "<group>"; };
-		D1E4D88E2465429E0087C68E /* ClearCacheTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClearCacheTool.swift; sourceTree = "<group>"; };
 		E18DD2571594BDBCB50B3E58 /* Pods_Runner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Runner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7DB98E78ADFB61D1B79ECA5 /* Pods-Runner.profile.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Runner.profile.xcconfig"; path = "Target Support Files/Pods-Runner/Pods-Runner.profile.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -122,8 +116,6 @@
 		97C146F01CF9000F007C117D /* Runner */ = {
 			isa = PBXGroup;
 			children = (
-				D1E4D88B246525D60087C68E /* Tool */,
-				D1E4D885246523EE0087C68E /* NativeSupport */,
 				97C146FA1CF9000F007C117D /* Main.storyboard */,
 				97C146FD1CF9000F007C117D /* Assets.xcassets */,
 				97C146FF1CF9000F007C117D /* LaunchScreen.storyboard */,
@@ -142,23 +134,6 @@
 			children = (
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		D1E4D885246523EE0087C68E /* NativeSupport */ = {
-			isa = PBXGroup;
-			children = (
-				D1E4D889246524630087C68E /* VideoCropImgSupport.swift */,
-			);
-			name = NativeSupport;
-			sourceTree = "<group>";
-		};
-		D1E4D88B246525D60087C68E /* Tool */ = {
-			isa = PBXGroup;
-			children = (
-				D1E4D88E2465429E0087C68E /* ClearCacheTool.swift */,
-				D1E4D88C246525EB0087C68E /* LMTools.swift */,
-			);
-			name = Tool;
 			sourceTree = "<group>";
 		};
 		D3DB73289AEFC513CE58198A /* Frameworks */ = {
@@ -317,9 +292,6 @@
 			files = (
 				74858FAF1ED2DC5600515810 /* AppDelegate.swift in Sources */,
 				1498D2341E8E89220040F4C2 /* GeneratedPluginRegistrant.m in Sources */,
-				D1E4D88D246525EB0087C68E /* LMTools.swift in Sources */,
-				D1E4D88A246524630087C68E /* VideoCropImgSupport.swift in Sources */,
-				D1E4D88F2465429E0087C68E /* ClearCacheTool.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
