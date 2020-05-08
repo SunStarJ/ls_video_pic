@@ -32,7 +32,7 @@ public class LsvideopicPlugin : FlutterPlugin, MethodCallHandler {
         when (call.method) {
             "getThumbPic" -> {
                 staticContext?.run {
-                    VideoUtil.getFrameImg(this, call.argument<String>("videoPath")!!, call.argument<Long>("second")!!, result)
+                    VideoUtil.getFrameImg(this, call.argument<String>("videoPath")!!, call.argument<Long>("second")!!*1000, result)
                 }
             }
         }
