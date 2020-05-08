@@ -1,14 +1,23 @@
 # lsvideopic
 
-A new Flutter plugin.
+Flutter 视频裁图功能
 
-## Getting Started
+## 如何试用
+**1.导入**<br>
+`
+import 'package:lsvideopic/ls_video_pic.dart';
+`<br>
+**2.使用**<br>
+```
+ ///@param videoPath 视频路径
+ ///@param milliseconds 帧秒值
+ LsVideoPic.videoFrameImagePath(videoPath, timeStemp)
+           .then((data) {
+                //图片路径
+                print(data);
+            }).catchError((error){
+                (error as PlatformException).details;//错误信息
+                 print(error);
+            });
+```
 
-This project is a starting point for a Flutter
-[plug-in package](https://flutter.dev/developing-packages/),
-a specialized package that includes platform-specific implementation code for
-Android and/or iOS.
-
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.dev/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.

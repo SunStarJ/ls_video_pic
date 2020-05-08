@@ -4,7 +4,7 @@ import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
-import 'package:lsvideopic/ls_video_pic.dart';
+import 'package:lsvideopic/lsvideopic.dart';
 
 void main() => runApp(MyApp());
 
@@ -17,13 +17,13 @@ class _MyAppState extends State<MyApp> {
   TextEditingController _control = TextEditingController();
   String videoPath = "";
   List<String> pathList = List();
-  num timeStemp = 0;
+  num milliseconds = 0;
 
   @override
   void initState() {
     super.initState();
     _control.addListener(() {
-      timeStemp = num.parse(_control.text) * 1000;
+      milliseconds = num.parse(_control.text) * 1000;
     });
   }
 
@@ -63,7 +63,7 @@ class _MyAppState extends State<MyApp> {
                   )),
                   FlatButton(
                       onPressed: () async {
-                        LsVideoPic.videoFrameImagePath(videoPath, timeStemp)
+                        LsVideoPic.videoFrameImagePath(videoPath, milliseconds)
                             .then((data) {
 
                           print(data);    
