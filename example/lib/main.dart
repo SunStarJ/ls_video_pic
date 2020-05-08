@@ -23,7 +23,7 @@ class _MyAppState extends State<MyApp> {
   void initState() {
     super.initState();
     _control.addListener(() {
-      milliseconds = num.parse(_control.text) * 1000;
+      milliseconds = num.parse(_control.text);
     });
   }
 
